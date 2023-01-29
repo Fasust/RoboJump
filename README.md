@@ -1,4 +1,6 @@
-# Robo Jump ![Robot](Assets\Robot\robo_1.png)
+# Robo Jump ![Robot](./Assets/Robot/robo_1.png)
+
+ ![Robot](./showcase.gif)
 
 A small game to bring myself up to speed on hwo unity changed since I built [German Valentine](https://github.com/Fasust/GermanValentine) in 2019.
  
@@ -9,3 +11,4 @@ A small game to bring myself up to speed on hwo unity changed since I built [Ger
 2. Unit [PlayerInput](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/api/UnityEngine.InputSystem.PlayerInput.html) System 2023
 3. C# action system for an event based architecture
 4. WebGL Builds
+
