@@ -17,9 +17,13 @@ public class PipeController : MonoBehaviour
         player = RobotController.instance;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        MaybeScore(collision);
+    }
+
     void FixedUpdate()
     {
-        MaybeScore();
         MaybeDie();
     }
 
@@ -32,9 +36,10 @@ public class PipeController : MonoBehaviour
         }
     }
 
-    private void MaybeScore()
+    private void MaybeScore(Collider2D collision)
     {
-        if (player.transform.position.x > transform.position.x && !scored)
+        bool isPlayer = collision.gameObject.Equals(player.gameObject);
+        if (isPlayer && !scored)
         {
             scored = true;
             ScoreManager.instance.Add();

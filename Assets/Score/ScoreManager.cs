@@ -5,37 +5,57 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance { get; private set; }
     public int score { get; private set; }
+    public int deadScore { get; private set; }
 
     [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] private TextMeshProUGUI deadText;
     [SerializeField] private AudioSource audioSource;
 
-    private bool frozen;
+    private bool dead;
 
     // Start is called before the first frame update
     void Awake()
     {
         if (instance == null) { instance = this; }
         audioSource = GetComponent<AudioSource>();
+        RobotController.instance.onStateChange += AssertDeath;
+    }
+
+    private void AssertDeath(RobotState state)
+    {
+        if (state == RobotState.Dead)
+        {
+            dead = true;
+        }
+        else
+        {
+            dead = false;
+        }
     }
 
     public void Add()
     {
-        if (frozen) return;
+        if (dead)
+        {
+            ScoreDeadPoint();
+        }
+        else
+        {
+            ScorePoint();
 
-        score++;
-        text.SetText(score.ToString());
+        }
         audioSource.Play();
     }
 
-    public void Clear()
+    private void ScorePoint()
     {
-        score = 0;
-        frozen = false;
+        score++;
         text.SetText(score.ToString());
     }
 
-    public void Freeze()
+    private void ScoreDeadPoint()
     {
-        frozen = true;
+        deadScore++;
+        deadText.SetText("+" + deadScore.ToString());
     }
 }

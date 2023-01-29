@@ -1,27 +1,18 @@
 {
-    "name": "Robo Jump",
+    "name": "Controlls",
     "maps": [
         {
             "name": "Player",
             "id": "c87ccc03-d3b5-4423-a804-3fd858ff5007",
             "actions": [
                 {
-                    "name": "JumpStarted",
-                    "type": "Value",
-                    "id": "7b2b5291-3241-4a4b-b902-20143f1a3774",
-                    "expectedControlType": "Delta",
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "f74ecbc8-d954-461b-b1d7-bbfa37221dde",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "JumpStopped",
-                    "type": "Value",
-                    "id": "527ac1a6-9dff-4acf-a78d-fedad9556de1",
-                    "expectedControlType": "Delta",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Reset",
@@ -36,45 +27,34 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "55d46349-77da-47dc-9937-43140ef34844",
-                    "path": "<Keyboard>/space",
-                    "interactions": "Tap(duration=0.01,pressPoint=0.01)",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "JumpStarted",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "cff02456-0687-4cdc-a8b2-c18e9f14b1f8",
-                    "path": "<Keyboard>/space",
-                    "interactions": "Press(pressPoint=0.0001,behavior=1)",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "JumpStopped",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "bae99924-4a69-4f81-8fbe-ed42ec73cd36",
+                    "id": "9d7b8114-8282-4a52-b401-09847efa1eb2",
                     "path": "<Gamepad>/buttonSouth",
-                    "interactions": "Press(pressPoint=0.0001,behavior=1)",
+                    "interactions": "Press(pressPoint=1E-05,behavior=2)",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "JumpStopped",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "9d730ecf-0490-43ca-b72a-e6ecf895c947",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "Tap(duration=0.01,pressPoint=0.01)",
+                    "id": "ae9a5dbf-4d36-485c-8bd9-528e62c31241",
+                    "path": "<Keyboard>/space",
+                    "interactions": "Press(pressPoint=1E-05,behavior=2)",
                     "processors": "",
-                    "groups": "Gamepad",
-                    "action": "JumpStarted",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c6b1d1ca-389d-497d-b5ec-b6fbf998eccc",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Press(pressPoint=1E-05,behavior=2)",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -92,10 +72,21 @@
                 {
                     "name": "",
                     "id": "0b45d679-7f5b-45d5-b575-4e57c0b55a12",
-                    "path": "<Gamepad>/start",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "Reset",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "011a6f81-ee97-4c41-9986-8b210b8bf8d3",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Hold(duration=1)",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "Reset",
                     "isComposite": false,
                     "isPartOfComposite": false

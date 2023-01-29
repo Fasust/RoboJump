@@ -16,6 +16,7 @@ public class GameOverManager : MonoBehaviour
 
     void OnReset(InputValue inputValue)
     {
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
